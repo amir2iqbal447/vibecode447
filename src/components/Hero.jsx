@@ -1,4 +1,5 @@
 import { Eyebrow, ArrowLink } from './ui'
+import GradientShader from './GradientShader'
 
 const RECENT = [
   { title: 'How Peculiar Humans Beat Fast Machines', kind: 'Essay', date: 'May 2025' },
@@ -9,17 +10,12 @@ const RECENT = [
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-ink-900 text-cream-50">
-      {/* atmospheric background */}
+      {/* atmospheric background: animated Stripe-like gradient shader */}
       <div className="absolute inset-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{
-            backgroundImage:
-              'url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2400&auto=format&fit=crop")',
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink-900 via-ink-900/85 to-ink-900/60" />
-        <div className="absolute inset-0 bg-grid-dark opacity-60" />
+        <GradientShader />
+        {/* keep the headline readable, but let the shader bleed through */}
+        <div className="absolute inset-0 bg-gradient-to-r from-ink-900/90 via-ink-900/65 to-ink-900/35" />
+        <div className="absolute inset-0 bg-grid-dark opacity-30" />
       </div>
 
       <div className="container-site relative z-10 grid grid-cols-1 gap-12 pb-24 pt-36 md:grid-cols-12 md:gap-10 md:pb-28 md:pt-44">
