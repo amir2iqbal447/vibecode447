@@ -12,9 +12,10 @@ export default function Hero() {
     <section className="relative overflow-hidden bg-ink-900 text-cream-50">
       {/* atmospheric background: animated Stripe-like gradient shader */}
       <div className="absolute inset-0">
-        <GradientShader className="opacity-90" />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink-900 via-ink-900/85 to-ink-900/55" />
-        <div className="absolute inset-0 bg-grid-dark opacity-40" />
+        <GradientShader />
+        {/* keep the headline readable, but let the shader bleed through */}
+        <div className="absolute inset-0 bg-gradient-to-r from-ink-900/90 via-ink-900/65 to-ink-900/35" />
+        <div className="absolute inset-0 bg-grid-dark opacity-30" />
       </div>
 
       <div className="container-site relative z-10 grid grid-cols-1 gap-12 pb-24 pt-36 md:grid-cols-12 md:gap-10 md:pb-28 md:pt-44">
